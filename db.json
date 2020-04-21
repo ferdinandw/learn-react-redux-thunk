@@ -1,0 +1,14 @@
+{
+  "siswa": [
+    {
+      "id": 1,
+      "nama": "ferdin",
+      "kelas": 12
+    },
+    {
+      "id": 2,
+      "nama": "ferdina",
+      "kelas": 12
+    }
+  ]
+}

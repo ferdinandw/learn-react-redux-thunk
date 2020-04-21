@@ -1,14 +1,24 @@
 import React from 'react';
-import Index from '.';
+import {connect} from 'react-redux';
+import {hapusSiswa} from './../../actioncreators/siswa'
 
 const Item = (props) => {
-    const { nama,kelas} = props.data
+    const { id, nama,kelas} = props.data
+
+    const hapus = () =>{
+        props.hapusSiswa(id)
+    }
     return (
         <tr>
             <td>{nama}</td>
             <td>{kelas}</td>
+            <button onClick={hapus}>Hapus</button>
         </tr>
     )
 }
 
-export default Item;
+const mapDispatchToProps = {
+    hapusSiswa
+}
+
+export default connect(null, mapDispatchToProps) (Item);

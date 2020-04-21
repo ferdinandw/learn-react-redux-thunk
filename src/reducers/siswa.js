@@ -1,14 +1,21 @@
-const initialState = [{
-    id: 1,
-    nama: "dina",
-    kelas: 13
-}]
+const initialState = [];
 
 const Siswa = (state = initialState,action) => {
 
     switch(action.type){
-        case `SISWATAMBAH`:
-            return [...state, action.payload]
+        case `SISWA_HAPUS`:
+            const newState = state.filter ( item => {
+                if (item.id !== action.payload)
+                    return true;
+                return false
+            });
+            return newState;
+            // return state.filter( () =>{
+            //     return true
+            // })
+            // return state
+        case `SISWA_LIST`:
+            return action.payload
         default:
             return state;
     }

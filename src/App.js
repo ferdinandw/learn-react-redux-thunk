@@ -1,11 +1,11 @@
 import React from 'react';
-import {createStore} from 'redux';
+import {createStore, applyMiddleware} from 'redux';
 import reducers from './reducers'
-import './App.css';
 import {Provider} from 'react-redux'
 import Siswa from './components/Siswa'
+import thunk from 'redux-thunk'
 
-const store = createStore(reducers)
+const store = createStore(reducers, applyMiddleware(thunk))
 
 function App() {
   return (

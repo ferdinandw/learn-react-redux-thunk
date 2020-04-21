@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {connect} from 'react-redux'
 import Item from './Item'
+import { getSiswa } from './../../actioncreators/siswa'
 
 const Main = (props) => {
     const {data} = props;
+    useEffect(() => {
+        if (data && !data.length){
+            props.getSiswa()
+        }
+    },[])
     return(
         <div>
             <table border="1">
@@ -33,4 +39,8 @@ const mapStateToProps = (state) =>{
     }
 }
 
-export default connect(mapStateToProps)(Main)
+const mapDispatchToProps = {
+    getSiswa
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Main)
