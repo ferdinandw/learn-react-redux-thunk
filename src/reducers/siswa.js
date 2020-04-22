@@ -16,6 +16,8 @@ const Siswa = (state = initialState,action) => {
             // return state
         case `SISWA_LIST`:
             return action.payload
+        case `SISWA_TAMBAH`:
+            return [...state, action.payload]
         default:
             return state;
     }

@@ -25,3 +25,20 @@ export const hapusSiswa = (id) => {
         })
     }
 }
+
+export const tambahSiswa = data => {
+    return (dispatch) => {
+        axios.post(`http://localhost:8000/siswa`, data)
+        .then ( resp => {
+            console.log(resp.data)
+            dispatch({
+                type: `SEMBUNYIKAN_TAMBAH_SISWA`
+            })
+            dispatch({
+                type:`SISWA_TAMBAH`,
+                payload: resp.data
+            })
+        })
+
+    }
+}

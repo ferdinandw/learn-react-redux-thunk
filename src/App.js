@@ -4,6 +4,8 @@ import reducers from './reducers'
 import {Provider} from 'react-redux'
 import Siswa from './components/Siswa'
 import thunk from 'redux-thunk'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const store = createStore(reducers, applyMiddleware(thunk))
 
